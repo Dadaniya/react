@@ -22,8 +22,8 @@ let config = Object.assign({}, baseConfig, {
       searchResolveModulesDirectories: false
     }),
     new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),  //引用优化,索引小
+    new webpack.optimize.AggressiveMergingPlugin(),//优化代码段,合并相同的
     new webpack.NoErrorsPlugin()
   ],
   module: defaultSettings.getDefaultModules()

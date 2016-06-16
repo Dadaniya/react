@@ -37,6 +37,10 @@ function getDefaultModules() {
       {
         test: /\.(mp4|ogg|svg)$/,
         loader: 'file-loader'
+      },
+      {
+        test:/\.json$/,
+        loader:'json-loader'
       }
     ]
   };
@@ -47,6 +51,8 @@ module.exports = {
   port: dfltPort,
   getDefaultModules: getDefaultModules,
   postcss: function () {
-    return [];
+    return [
+      require('autoprefixer')({browser:["last 2 versions",">=ie8"]})
+    ];
   }
 };

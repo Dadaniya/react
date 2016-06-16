@@ -5,18 +5,28 @@ import React from 'react';
 
 let yeomanImage = require('../images/yeoman.png');
 
-class AppComponent extends React.Component {
+let imagesDatas=require('../data.json');
+/*
+*get image url
+ */
+imageDatas=imageDatas.map(function(value,index){
+  value.url=require('../images/'+value.fileName);
+  return value;
+})
+class GalleryByReactApp extends React.Component {
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get stdfdfarted!</div>
-      </div>
+      <section className="stage">
+        <section className="img-sec">
+
+        </section>
+        <nav className="controller-nav"></nav>
+      </section>
     );
   }
 }
 
-AppComponent.defaultProps = {
+GalleryByReactApp.defaultProps = {
 };
 
-export default AppComponent;
+export default GalleryByReactApp;
