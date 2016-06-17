@@ -31,16 +31,20 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
       },
       {
-        test: /\.(png|jpg|gif|woff|woff2)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'url-loader?limit=8192'
       },
       {
-        test: /\.(mp4|ogg|svg)$/,
+        test: /\.(mp4|ogg)$/,
         loader: 'file-loader'
       },
       {
         test:/\.json$/,
         loader:'json-loader'
+      },
+      {
+        test   : /\.woff|\.woff2|\.svg|.eot|\.ttf/,
+        loader : 'url?prefix=font/&limit=10000'
       }
     ]
   };

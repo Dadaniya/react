@@ -14,6 +14,7 @@ if (args._.length > 0 && args._.indexOf('start') !== -1) {
   env = args.env;
 } else {
   env = 'dev';
+
 }
 process.env.REACT_WEBPACK_ENV = env;
 
